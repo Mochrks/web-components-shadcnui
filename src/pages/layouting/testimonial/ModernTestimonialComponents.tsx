@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Quote, Star, ArrowRight, MessageCircle } from 'lucide-react'
+import { Title } from '@/components/demo/Title'
 
 // Sample testimonial data
 const testimonials = [
@@ -332,7 +333,11 @@ const ReadMoreTestimonial = () => {
 // Main component to showcase all Testimonial components
 export default function ModernTestimonialComponents() {
     return (
-        <div className="container mx-auto py-12 space-y-24">
+        <div className="container mx-auto space-y-24">
+
+            <div className="p-20 bg-slate-200 my-4">
+                <Title name="Screen Testimonial " />
+            </div>
             <section>
                 <h2 className="text-3xl font-bold mb-8 text-center">Modern Carousel Testimonial</h2>
                 <ModernCarouselTestimonial />

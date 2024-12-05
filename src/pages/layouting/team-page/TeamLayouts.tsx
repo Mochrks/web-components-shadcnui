@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { Badge } from '@/components/ui/badge'
+import { Title } from '@/components/demo/Title'
 
 // Dummy data for team members
 const teamMembers = [
@@ -465,8 +466,11 @@ export default function ModernTeamLayouts() {
 
     return (
         <div className="bg-background min-h-screen py-12">
+            <div className="p-20 bg-slate-200 my-4">
+                <Title name="Screen Team " />
+            </div>
             <div className="container mx-auto px-4">
-                <h1 className="text-4xl font-bold text-center mb-8">Our Amazing Team</h1>
+
                 <LayoutSelector currentLayout={currentLayout} setCurrentLayout={setCurrentLayout} />
                 <AnimatePresence mode="wait">
                     {currentLayout === 'Grid' && <GridLayout key="grid" />}

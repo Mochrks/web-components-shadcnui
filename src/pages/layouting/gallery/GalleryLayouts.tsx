@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { Title } from '@/components/demo/Title'
 
 // Dummy data for gallery items
 const galleryItems = [
@@ -454,6 +455,9 @@ const BeforeAfterGallery = () => {
 export default function GalleryLayouts() {
     return (
         <div className="bg-gray-100 min-h-screen">
+            <div className="p-20 bg-slate-200 my-4">
+                <Title name="Screen Gallery " />
+            </div>
             <MasonryGallery />
             <FullscreenSlideshow />
             <HorizontalScrollGallery />

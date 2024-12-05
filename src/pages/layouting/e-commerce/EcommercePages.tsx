@@ -531,12 +531,12 @@ export default function EcommercePages() {
 
     return (
         <>
-            <div className='py-10'>
+            <div className='p-20 bg-slate-200 my-4'>
                 <Title name="Screen E-Commerce layout" />
             </div>
             <EcommerceLayout>
                 <Tabs value={currentPage} onValueChange={setCurrentPage} className="w-full mb-8">
-                    <TabsList className="grid w-full grid-cols-6">
+                    <TabsList className="grid w-full grid-cols-6 bg-gray-200">
                         <TabsTrigger value="productListing">Products</TabsTrigger>
                         <TabsTrigger value="productDetail">Details</TabsTrigger>
                         <TabsTrigger value="cart">Cart</TabsTrigger>

@@ -47,7 +47,7 @@ export default function NavbarLayout() {
     return (
         <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
             <div className="container mx-auto px-4 py-8">
-                <div className="py-5">
+                <div className="p-20 bg-slate-200 my-4">
                     <Title name="Screen Navbar Layout " />
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">

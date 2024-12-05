@@ -434,7 +434,7 @@ const InteractiveTimelineFAQ = () => {
 export default function ModernFAQComponents() {
     return (
         <>
-            <div className="py-5">
+            <div className="p-20 bg-slate-200 my-4">
                 <Title name="Screen FAQ Layout " />
             </div>
             <div className="container mx-auto py-8 space-y-12">

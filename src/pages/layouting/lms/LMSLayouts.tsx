@@ -6,6 +6,7 @@ import { Video, FileText, CheckCircle, User, BarChart, Clock, Calendar, ChevronD
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import { Title } from '@/components/demo/Title'
 
 // Dummy data for courses
 const courses = [
@@ -544,6 +545,9 @@ export default function LMSLayouts() {
 
     return (
         <div className="min-h-screen bg-gray-100">
+            <div className="p-20 bg-slate-200 my-4">
+                <Title name="Screen LMS " />
+            </div>
             <div className="bg-white shadow-md">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center py-4">

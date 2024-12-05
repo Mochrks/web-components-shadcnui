@@ -221,13 +221,13 @@ export default function UserProfilePages() {
 
     return (
         <>
-            <div className='py-10'>
+            <div className='p-20 bg-slate-200 my-4'>
                 <Title name="Screen User Profiles layout" />
             </div>
 
             <UserProfileLayout>
                 <Tabs value={currentPage} onValueChange={setCurrentPage} className="w-full">
-                    <TabsList className="grid w-full grid-cols-3">
+                    <TabsList className="grid w-full grid-cols-3 bg-gray-200">
                         <TabsTrigger value="profile" className="flex items-center">
                             <User className="w-4 h-4 mr-2" />
                             Profile

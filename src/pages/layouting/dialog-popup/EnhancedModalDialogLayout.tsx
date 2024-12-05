@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, AlertTriangle, CheckCircle, Info, HelpCircle, Bell, Settings, User, Mail, Lock } from 'lucide-react'
+import { Title } from '@/components/demo/Title'
 
 // Helper component for the backdrop
 const Backdrop = ({ children, onClick }) => (
@@ -688,9 +689,11 @@ export default function EnhancedModalDialogLayout() {
     ]
 
     return (
-        <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-gray-100  px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
-                <h1 className="text-4xl font-bold text-center mb-12">Dialog Modal Layouts</h1>
+                <div className="p-20 bg-slate-200 my-4">
+                    <Title name="Screen Modal Dialog " />
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {modals.map((modal, index) => (
                         <motion.div

@@ -185,11 +185,14 @@ export default function Dashboard() {
 
     return (
         <>
-            <div className='py-10'>
+            <div className='p-20 bg-slate-200 my-4'>
                 <Title name="Screen Dashboard layout" />
             </div>
-
-
+            <div className='w-full py-10'>
+                <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+                    Dashboard Template 1
+                </h2>
+            </div>
             <div className={`flex h-screen ${darkMode ? 'dark' : ''}`}>
                 {/* Sidebar */}
                 <div className={`bg-white dark:bg-gray-800 dark:text-white w-64 h-full flex-shrink-0 ${sidebarOpen ? '' : 'hidden'}`}>

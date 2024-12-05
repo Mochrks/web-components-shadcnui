@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
+import { Title } from '@/components/demo/Title'
 
 // Dummy data for roadmap items
 const roadmapItems = [
@@ -533,6 +534,9 @@ const MilestoneRoadmap = () => {
 export default function RoadmapLayouts() {
     return (
         <div className="bg-gray-100 min-h-screen">
+            <div className="p-20 bg-slate-200 my-4">
+                <Title name="Screen Roadmap " />
+            </div>
             <VerticalTimeline />
             <HorizontalScrollingRoadmap />
             <CircularRoadmap />

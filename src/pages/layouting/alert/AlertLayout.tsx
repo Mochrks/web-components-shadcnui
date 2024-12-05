@@ -538,9 +538,10 @@ export default function AlertLayout() {
     }, [])
 
     return (
-        <><div className="py-5">
-            <Title name="Screen Alert Animations " />
-        </div>
+        <>
+            <div className="p-20 bg-slate-200 my-4">
+                <Title name="Screen Alert Animations " />
+            </div>
 
             <div className="space-y-4 p-4">
                 <CustomAlert

@@ -11,6 +11,7 @@ import {
     Home, FileIcon, FolderIcon, Tag, Users, MessageSquare,
     Settings, BarChart, Search as SEOIcon, Package
 } from 'lucide-react'
+import { Title } from '@/components/demo/Title'
 
 export default function CMSLayout() {
     const [activeSection, setActiveSection] = useState('dashboard')
@@ -31,80 +32,85 @@ export default function CMSLayout() {
     ]
 
     return (
-        <div className="flex h-screen bg-gray-100">
-            {/* Sidebar Component */}
-            <aside className="w-64 bg-white shadow-md overflow-y-auto">
-                <div className="p-4">
-                    <h1 className="text-2xl font-bold text-gray-800">CMS Dashboard</h1>
-                </div>
-                <nav className="mt-6">
-                    {navItems.map((item) => (
-                        <Button
-                            key={item.key}
-                            variant={activeSection === item.key ? "secondary" : "ghost"}
-                            className="w-full justify-start"
-                            onClick={() => setActiveSection(item.key)}
-                        >
-                            <item.icon className="mr-2 h-4 w-4" />
-                            {item.name}
-                        </Button>
-                    ))}
-                </nav>
-            </aside>
-
-            <div className="flex-1 flex flex-col overflow-hidden">
-                {/* Header Component */}
-                <header className="bg-white shadow-sm z-10">
-                    <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-                        <Button variant="ghost" size="icon" className="md:hidden">
-                            <Menu className="h-6 w-6" />
-                        </Button>
-                        <div className="flex items-center">
-                            <Input
-                                type="search"
-                                placeholder="Search..."
-                                className="max-w-sm mr-2"
-                            />
-                            <Button size="icon" variant="ghost">
-                                <Search className="h-5 w-5" />
-                            </Button>
-                        </div>
-                        <div className="flex items-center">
-                            <Button size="icon" variant="ghost" className="mr-2">
-                                <Bell className="h-5 w-5" />
-                            </Button>
-                            <Avatar>
-                                <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-                                <AvatarFallback>CN</AvatarFallback>
-                            </Avatar>
-                        </div>
-                    </div>
-                </header>
-
-                {/* Main Content Component */}
-                <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
-                    <div className="container mx-auto px-6 py-8">
-                        <h3 className="text-gray-700 text-3xl font-medium mb-6">
-                            {navItems.find(item => item.key === activeSection)?.name}
-                        </h3>
-
-                        {activeSection === 'dashboard' && <DashboardComponent />}
-                        {activeSection === 'articles' && <ArticleManager />}
-                        {activeSection === 'pages' && <PagesComponent />}
-                        {activeSection === 'media' && <MediaManager />}
-                        {activeSection === 'categories' && <CategoriesComponent />}
-                        {activeSection === 'tags' && <TagsComponent />}
-                        {activeSection === 'users' && <UsersComponent />}
-                        {activeSection === 'comments' && <CommentsComponent />}
-                        {activeSection === 'settings' && <SettingsComponent />}
-                        {activeSection === 'analytics' && <AnalyticsComponent />}
-                        {activeSection === 'seo' && <SEOComponent />}
-                        {activeSection === 'plugins' && <PluginsComponent />}
-                    </div>
-                </main>
+        <>
+            <div className="p-20 bg-slate-200 my-4">
+                <Title name="Screen CMS " />
             </div>
-        </div>
-    )
+            <div className="flex h-screen bg-gray-100">
+
+                {/* Sidebar Component */}
+                <aside className="w-64 bg-white shadow-md overflow-y-auto">
+                    <div className="p-4">
+                        <h1 className="text-2xl font-bold text-gray-800">CMS Dashboard</h1>
+                    </div>
+                    <nav className="mt-6">
+                        {navItems.map((item) => (
+                            <Button
+                                key={item.key}
+                                variant={activeSection === item.key ? "secondary" : "ghost"}
+                                className="w-full justify-start"
+                                onClick={() => setActiveSection(item.key)}
+                            >
+                                <item.icon className="mr-2 h-4 w-4" />
+                                {item.name}
+                            </Button>
+                        ))}
+                    </nav>
+                </aside>
+
+                <div className="flex-1 flex flex-col overflow-hidden">
+                    {/* Header Component */}
+                    <header className="bg-white shadow-sm z-10">
+                        <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+                            <Button variant="ghost" size="icon" className="md:hidden">
+                                <Menu className="h-6 w-6" />
+                            </Button>
+                            <div className="flex items-center">
+                                <Input
+                                    type="search"
+                                    placeholder="Search..."
+                                    className="max-w-sm mr-2"
+                                />
+                                <Button size="icon" variant="ghost">
+                                    <Search className="h-5 w-5" />
+                                </Button>
+                            </div>
+                            <div className="flex items-center">
+                                <Button size="icon" variant="ghost" className="mr-2">
+                                    <Bell className="h-5 w-5" />
+                                </Button>
+                                <Avatar>
+                                    <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                                    <AvatarFallback>CN</AvatarFallback>
+                                </Avatar>
+                            </div>
+                        </div>
+                    </header>
+
+                    {/* Main Content Component */}
+                    <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
+                        <div className="container mx-auto px-6 py-8">
+                            <h3 className="text-gray-700 text-3xl font-medium mb-6">
+                                {navItems.find(item => item.key === activeSection)?.name}
+                            </h3>
+
+                            {activeSection === 'dashboard' && <DashboardComponent />}
+                            {activeSection === 'articles' && <ArticleManager />}
+                            {activeSection === 'pages' && <PagesComponent />}
+                            {activeSection === 'media' && <MediaManager />}
+                            {activeSection === 'categories' && <CategoriesComponent />}
+                            {activeSection === 'tags' && <TagsComponent />}
+                            {activeSection === 'users' && <UsersComponent />}
+                            {activeSection === 'comments' && <CommentsComponent />}
+                            {activeSection === 'settings' && <SettingsComponent />}
+                            {activeSection === 'analytics' && <AnalyticsComponent />}
+                            {activeSection === 'seo' && <SEOComponent />}
+                            {activeSection === 'plugins' && <PluginsComponent />}
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </>)
 }
 
 // Dashboard Component

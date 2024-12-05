@@ -912,12 +912,12 @@ const BellNotifTen = () => {
 const NotificationAndMessaging = () => {
     const [activeTab, setActiveTab] = useState('inbox')
     return (
-        <div className="container mx-auto py-10">
-            <div className='flex flex-col w-full text-center gap-5 mb-20'>
+        <div className="container mx-auto py-2">
+            <div className='flex flex-col w-full text-center gap-5 mb-20 bg-slate-200 p-20'>
                 <Title name="Screen Notification And Messaging" />
             </div>
-            <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-                <TabsList className="grid w-full grid-cols-2">
+            <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full ">
+                <TabsList className="grid w-full grid-cols-2 bg-gray-200">
                     <TabsTrigger value="inbox" className="flex items-center">
                         <Bell className="w-4 h-4 mr-2" />
                         Inbox
@@ -941,7 +941,7 @@ const NotificationAndMessaging = () => {
                         <BellNotifTen />
                     </div>
                 </TabsContent>
-                <TabsContent value="chat" className="mt-6">
+                <TabsContent value="chat" className="mt-6 ">
                     <div className='w-full pt-10'>
                         {renderChatLayoutOne()}
                     </div>

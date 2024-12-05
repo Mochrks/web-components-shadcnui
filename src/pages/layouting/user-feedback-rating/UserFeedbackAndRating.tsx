@@ -455,8 +455,8 @@ const UserFeedbackAndRating = () => {
     }
 
     return (
-        <div className="container mx-auto py-10">
-            <div className='flex flex-col w-full text-center gap-5 mb-20'>
+        <div className="container mx-auto ">
+            <div className='p-20 bg-slate-200 my-4'>
                 <Title name="Screen User Feedback and Ratings" />
             </div>
 
@@ -471,16 +471,18 @@ const UserFeedbackAndRating = () => {
                 <EmojiFeedback />
                 <FloatingFeedbackButton />
             </div>
-            {submissionStatus && (
-                <Alert variant="default" className="mt-4">
-                    <AlertCircle className="h-4 w-4" />
-                    <AlertTitle>Success</AlertTitle>
-                    <AlertDescription>
-                        Your {activeTab === 'reviews' ? 'review' : 'feedback'} has been submitted successfully. Thank you for your input!
-                    </AlertDescription>
-                </Alert>
-            )}
-        </div>
+            {
+                submissionStatus && (
+                    <Alert variant="default" className="mt-4">
+                        <AlertCircle className="h-4 w-4" />
+                        <AlertTitle>Success</AlertTitle>
+                        <AlertDescription>
+                            Your {activeTab === 'reviews' ? 'review' : 'feedback'} has been submitted successfully. Thank you for your input!
+                        </AlertDescription>
+                    </Alert>
+                )
+            }
+        </div >
     )
 }
 

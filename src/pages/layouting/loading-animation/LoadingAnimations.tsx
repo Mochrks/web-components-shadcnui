@@ -8,7 +8,7 @@ const range = (n: number) => Array.from(Array(n).keys())
 export const LoadingAnimations: React.FC = () => {
     return (
         <>
-            <div className="py-5">
+            <div className="p-20 bg-slate-200 my-4">
                 <Title name="Screen Loading Animations " />
             </div>
             <div className="grid grid-cols-3 md:grid-cols-9 gap-5 p-5 mx-auto text-center ">

@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
+import { Title } from '@/components/demo/Title'
 
 // Dummy data for help articles and FAQs
 const helpArticles = [
@@ -490,6 +491,9 @@ const ContextualHelpOverlay = () => {
 export default function HelpCenterLayouts() {
     return (
         <div className="space-y-12 p-8">
+            <div className="p-20 bg-slate-200 my-4">
+                <Title name="Screen Help Center " />
+            </div>
             <div className='mt-4'>
                 <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
                     Chat AI help Assistant

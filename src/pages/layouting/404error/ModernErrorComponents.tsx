@@ -490,7 +490,7 @@ export default function ModernErrorComponents() {
 
     return (
         <>
-            <div className="py-5">
+            <div className="p-20 bg-slate-200 my-4">
                 <Title name="Screen 404 Error Layout " />
             </div>
             <div className="min-h-screen">

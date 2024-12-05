@@ -20,12 +20,11 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { Switch } from '@/components/ui/switch'
 import { Progress } from '@radix-ui/react-progress'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { SubTitleOne } from '@/components/demo/SubTitleOne'
 
 const AuthLayout = ({ children }: { children: React.ReactNode }) => (
-    <div className="min-h-screen flex pt-20 justify-center ">
-        <div className="max-w-md w-full">
-            {children}
-        </div>
+    <div className="min-h-screen pt-20">
+        {children}
     </div>
 )
 
@@ -179,18 +178,9 @@ const VerifyEmailPage = () => (
 )
 
 
-const OtherTenCompoennt = () => {
-    const [showPassword, setShowPassword] = useState(false)
-    const [passwordStrength, setPasswordStrength] = useState(0)
-
-    const updatePasswordStrength = (password: string) => {
-        // Simple password strength calculation
-        const strength = Math.min(100, password.length * 10)
-        setPasswordStrength(strength)
-    }
-
+const SocialLogin = () => {
     return (
-        <div className="space-y-12 max-w-md mx-auto">
+        <>
             {/* 1. Social Login Component */}
             <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
                 Social Login
@@ -206,7 +196,13 @@ const OtherTenCompoennt = () => {
                     <Button variant="outline"><svg className="w-5 h-5 mr-2" viewBox="0 0 24 24"><path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" /></svg>Twitter</Button>
                 </CardContent>
             </Card>
+        </>
+    )
+}
 
+const TwoFactor = () => {
+    return (
+        <>
             {/* 2. Two-Factor Authentication Setup */}
             <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
                 Two-Factor Authentication
@@ -229,8 +225,23 @@ const OtherTenCompoennt = () => {
                     <Button className="w-full">Set Up 2FA</Button>
                 </CardFooter>
             </Card>
+        </>
+    )
+}
 
-            {/* 3. Password Strength Meter */}
+
+const PasswordStrongMeter = () => {
+    const [showPassword, setShowPassword] = useState(false)
+    const [passwordStrength, setPasswordStrength] = useState(0)
+
+    const updatePasswordStrength = (password: string) => {
+        // Simple password strength calculation
+        const strength = Math.min(100, password.length * 10)
+        setPasswordStrength(strength)
+    }
+
+    return (
+        <> {/* 3. Password Strength Meter */}
             <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
                 Password Strength Meter
             </h2>
@@ -263,8 +274,13 @@ const OtherTenCompoennt = () => {
                     </div>
                 </CardContent>
             </Card>
+        </>
+    )
+}
 
-            {/* 4. Multi-Step Registration */}
+const MultiStep = () => {
+    return (
+        <>{/* 4. Multi-Step Registration */}
             <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
                 Multi-Step Registration
             </h2>
@@ -305,7 +321,14 @@ const OtherTenCompoennt = () => {
                 </CardFooter>
             </Card>
 
-            {/* 5. Biometric Authentication */}
+        </>
+    )
+}
+
+
+const BiometricAuth = () => {
+    return (
+        <> {/* 5. Biometric Authentication */}
             <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
                 Biometric Authentication
             </h2>
@@ -323,7 +346,13 @@ const OtherTenCompoennt = () => {
                     <p className="text-sm text-muted-foreground">Touch the sensor to login</p>
                 </CardFooter>
             </Card>
+        </>
+    )
+}
 
+const AccountRecovery = () => {
+    return (
+        <>
             {/* 6. Account Recovery Options */}
             <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
                 Account Recovery
@@ -353,8 +382,13 @@ const OtherTenCompoennt = () => {
                     <Button className="w-full">Save Recovery Options</Button>
                 </CardFooter>
             </Card>
+        </>
+    )
+}
 
-            {/* 7. Role-Based Registration */}
+const RoleBased = () => {
+    return (
+        <>  {/* 7. Role-Based Registration */}
             <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
                 Role-Based Registration
             </h2>
@@ -380,7 +414,13 @@ const OtherTenCompoennt = () => {
                     <Button className="w-full">Continue Registration</Button>
                 </CardFooter>
             </Card>
+        </>
+    )
+}
 
+const LoginActivity = () => {
+    return (
+        <>
             {/* 8. Login Activity Monitor */}
             <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
                 Login Activity Monitor
@@ -413,8 +453,13 @@ const OtherTenCompoennt = () => {
                     <Button variant="outline" className="w-full">View All Activity</Button>
                 </CardFooter>
             </Card>
+        </>
+    )
+}
 
-            {/* 9. Magic Link Login */}
+const MagicLink = () => {
+    return (
+        <> {/* 9. Magic Link Login */}
             <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
                 Magic Link Login
             </h2>
@@ -433,7 +478,14 @@ const OtherTenCompoennt = () => {
                     <Button className="w-full">Send Magic Link</Button>
                 </CardFooter>
             </Card>
+        </>
+    )
+}
 
+const ProfilePogress = () => {
+
+    return (
+        <>
             {/* 10. Profile Completion Progress */}
             <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
                 Profile Completion Progress
@@ -480,7 +532,7 @@ const OtherTenCompoennt = () => {
                     <Button className="w-full">Complete Profile</Button>
                 </CardFooter>
             </Card>
-        </div>
+        </>
     )
 }
 
@@ -488,51 +540,80 @@ export default function AuthentificationPages() {
 
     return (
         <>
-            <div className='flex flex-col mt-20 w-full text-center gap-5'>
+            <div className='p-20 bg-slate-200 my-4'>
                 <Title name="Screen Authentification Pages" />
             </div>
             <AuthLayout>
+                <SubTitleOne name="Component" />
+                <div className=" w-full grid grid-cols-1 md:grid-cols-2 border rounded-md">
+                    <div className='p-5 bg-gray-200'>
+                        <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+                            Login
+                        </h2>
+                        <LoginPage />
+                    </div>
+                    <div className='p-5'>
+                        <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+                            Register
+                        </h2>
+                        <RegisterPage />
+                    </div>
+                    <div className='p-5'>
+                        <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+                            Verification Email
+                        </h2>
+                        <VerifyEmailPage />
+                    </div>
+                    <div className='p-5 bg-gray-200'>
+                        <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+                            Reset Password
+                        </h2>
+                        <ResetPasswordPage />
+                    </div>
+                    <div className='p-5 bg-gray-200'>
+                        <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+                            Forgot password
+                        </h2>
+                        <ForgotPasswordPage />
+                    </div>
+                    <div className='p-5'>
+                        <SocialLogin />
+                    </div>
+                    <div className='p-5'>
+                        <TwoFactor />
+                    </div>
+                    <div className='p-5 bg-gray-200'>
+                        <PasswordStrongMeter />
+                    </div>
+                    <div className='p-5 bg-gray-200'>
+                        <MultiStep />
+                    </div>
+                    <div className='p-5'>
+                        <BiometricAuth />
+                    </div>
+                    <div className='p-5'>
+                        <AccountRecovery />
+                    </div>
+                    <div className='p-5 bg-gray-200'>
+                        <RoleBased />
+                    </div>
+                    <div className='p-5 bg-gray-200'>
+                        <LoginActivity />
+                    </div>
+                    <div className='p-5'>
+                        <MagicLink />
+                    </div>
+                    <div className='p-5'>
+                        <ProfilePogress />
+                    </div>
 
-                <div className='p-5'>
-                    <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
-                        Login
-                    </h2>
-                    <LoginPage />
-                </div>
-                <div className='p-5'>
-                    <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
-                        Register
-                    </h2>
-                    <RegisterPage />
-                </div>
-                <div className='p-5'>
-                    <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
-                        Verification Email
-                    </h2>
-                    <VerifyEmailPage />
-                </div>
-                <div className='p-5'>
-                    <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
-                        Reset Password
-                    </h2>
-                    <ResetPasswordPage />
-                </div>
-                <div className='p-5'>
-                    <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
-                        Forgot password
-                    </h2>
-                    <ForgotPasswordPage />
-                </div>
-                <div className='p-5'>
-                    <OtherTenCompoennt />
                 </div>
             </AuthLayout>
-            <div className='pt-20'>
-                <div className='py-5'>
 
-                    <AuthPagesLoginRegister />
-                </div>
-            </div>
+            <div className='pt-20 py-5'>
+                <SubTitleOne name="Layout pages" />
+                <AuthPagesLoginRegister />
+            </div >
         </>
     )
 }

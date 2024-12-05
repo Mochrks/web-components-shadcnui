@@ -19,12 +19,16 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+import { Title } from '@/components/demo/Title'
 
 export default function AffiliateLayout() {
     const [activeTab, setActiveTab] = useState('dashboard')
 
     return (
         <div className="min-h-screen bg-gray-100 flex flex-col">
+            <div className="p-20 bg-slate-200 my-4">
+                <Title name="Screen Affiliate User " />
+            </div>
             <Header />
             <div className="flex-1 flex">
                 <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />

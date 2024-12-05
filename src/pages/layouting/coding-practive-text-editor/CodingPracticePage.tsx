@@ -151,8 +151,8 @@ fizzBuzz();
     }
 
     return (
-        <div className="container mx-auto py-10">
-            <div className='flex flex-col w-full text-center gap-5 mb-20'>
+        <div className="container mx-auto ">
+            <div className='p-20 bg-slate-200 my-4'>
                 <Title name="Screen Coding Practice Text Editor" />
             </div>
             <div className="grid grid-cols-2 gap-6">

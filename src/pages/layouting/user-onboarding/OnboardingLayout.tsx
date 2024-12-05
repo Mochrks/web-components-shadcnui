@@ -14,6 +14,7 @@ import {
     Bell, HelpCircle, Star, User, Settings, Zap,
     CheckCircle, ChevronRight, MessageSquare, Send
 } from 'lucide-react'
+import { Title } from '@/components/demo/Title'
 
 export default function OnboardingLayout() {
     const [currentStep, setCurrentStep] = useState(0)
@@ -24,6 +25,9 @@ export default function OnboardingLayout() {
 
     return (
         <div className="min-h-screen bg-gray-100 flex flex-col">
+            <div className="p-20 bg-slate-200 my-4">
+                <Title name="Screen Onboarding User " />
+            </div>
             <Header />
             <ProgressBar currentStep={currentStep} totalSteps={totalSteps} />
             <main className="flex-grow container mx-auto px-4 py-8">

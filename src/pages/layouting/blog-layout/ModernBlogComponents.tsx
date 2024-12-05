@@ -237,7 +237,7 @@ const MinimalistLayout = () => {
 export default function ModernBlogComponents() {
     return (
         <>
-            <div className="py-5">
+            <div className="p-20 bg-slate-200 my-4">
                 <Title name="Screen Blog Layout " />
             </div>
             <div className="container mx-auto px-4 py-12 space-y-24">

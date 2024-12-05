@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Input } from '@/components/ui/input'
+import { Title } from '@/components/demo/Title'
 
 // Dummy data for event items
 const eventItems = [
@@ -798,6 +799,9 @@ const EventNetworkingHub = () => {
 export default function EventLayouts() {
     return (
         <div>
+            <div className="p-20 bg-slate-200 my-4">
+                <Title name="Screen Event " />
+            </div>
             <ModernCardLayout />
             <TimelineLayout />
             <InteractiveScheduleLayout />
