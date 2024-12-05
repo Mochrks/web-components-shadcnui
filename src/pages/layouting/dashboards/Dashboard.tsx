@@ -195,22 +195,22 @@ export default function Dashboard() {
             </div>
             <div className={`flex h-screen ${darkMode ? 'dark' : ''}`}>
                 {/* Sidebar */}
-                <div className={`bg-white dark:bg-gray-800 dark:text-white w-64 h-full flex-shrink-0 ${sidebarOpen ? '' : 'hidden'}`}>
+                <div className={`bg-white dark:bg-gray-800  border-r dark:text-white dark:border-r-gray-600 w-64 h-full flex-shrink-0 ${sidebarOpen ? '' : 'hidden'}`}>
                     <div className="p-4">
                         <div className='flex justify-between text-center items-center  mb-10'>
                             <h2 className=" text-2xl font-semibold dark:text-white ">Dashboard</h2>
                         </div>
-                        <nav>
-                            <Button variant="ghost" className="w-full justify-start mb-2">
+                        <nav >
+                            <Button variant="ghost" className="w-full justify-start mb-2 dark:hover:bg-gray-600">
                                 <Home className="mr-2 h-4 w-4" /> Home
                             </Button>
-                            <Button variant="ghost" className="w-full justify-start mb-2">
+                            <Button variant="ghost" className="w-full justify-start mb-2 dark:hover:bg-gray-600">
                                 <Users className="mr-2 h-4 w-4" /> Users
                             </Button>
-                            <Button variant="ghost" className="w-full justify-start mb-2">
+                            <Button variant="ghost" className="w-full justify-start mb-2 dark:hover:bg-gray-600">
                                 <BarChart3 className="mr-2 h-4 w-4" /> Analytics
                             </Button>
-                            <Button variant="ghost" className="w-full justify-start">
+                            <Button variant="ghost" className="w-full justify-start dark:hover:bg-gray-600">
                                 <Settings className="mr-2 h-4 w-4" /> Settings
                             </Button>
                         </nav>
@@ -218,19 +218,19 @@ export default function Dashboard() {
                 </div>
 
                 {/* Main Content */}
-                <div className="flex-1 overflow-auto bg-gray-100 dark:bg-gray-900">
-                    <header className="bg-white dark:bg-gray-800 shadow-sm">
-                        <div className='flex flex-row '>
-                            <div className='flex  text-center items-center dark:text-white'>
-                                <Button variant="ghost" onClick={() => setSidebarOpen(!sidebarOpen)} className="">
+                <div className="flex flex-col overflow-auto bg-gray-100 dark:bg-gray-900 w-full">
+                    <header className="flex items-center justify-between border-b dark:border-b-gray-600 bg-white dark:bg-gray-800 shadow-sm z-50">
+                        <div className='flex flex-row w-full'>
+                            <div className='flex text-center items-center dark:text-white ml-5 '>
+                                <Button variant="ghost" onClick={() => setSidebarOpen(!sidebarOpen)} className='dark:hover:bg-gray-600'>
                                     <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                                     </svg>
                                 </Button>
                             </div>
-                            <div className="flex w-full py-4 px-4 sm:px-6 lg:px-8 justify-end items-end ">
+                            <div className="flex w-full py-4 px-4 sm:px-6 lg:px-8 justify-end items-end  ">
                                 <div className="flex items-center">
-                                    <Input type="search" placeholder="Search..." className="mr-4" />
+                                    <Input type="search" placeholder="Search..." className="mr-4 dark:border-white" />
                                     <Switch
                                         checked={darkMode}
                                         onCheckedChange={setDarkMode}
@@ -266,7 +266,7 @@ export default function Dashboard() {
                         </div>
                     </header>
 
-                    <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+                    <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 ">
                         <div className="px-4 py-6 sm:px-0">
                             <h1 className="text-3xl font-semibold mb-6 dark:text-white">Dashboard Overview</h1>
 
