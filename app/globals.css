@@ -1,0 +1,226 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* neutrals */
+  --background: hsl(238 39% 100%);
+  --foreground: hsl(238 55% 1%);
+  --muted: hsl(238 15% 85%);
+  --muted-foreground: hsl(238 6% 35%);
+  --popover: hsl(238 39% 100%);
+  --popover-foreground: hsl(238 55% 1%);
+  --card: hsl(0 0% 99%);
+  --card-foreground: hsl(0 0% 0%);
+  --border: hsl(238 10% 92%);
+  --input: hsl(238 10% 92%);
+  --primary: hsl(238 30% 41%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(238 10% 89%);
+  --secondary-foreground: hsl(238 10% 29%);
+  --accent: hsl(238 10% 89%);
+  --accent-foreground: hsl(238 10% 29%);
+  --destructive: hsl(9 92% 36%);
+  --destructive-foreground: hsl(9 92% 96%);
+  --ring: hsl(238 30% 41%);
+  --chart-1: hsl(238 30% 41%);
+  --chart-2: hsl(238 10% 89%);
+  --chart-3: hsl(238 10% 89%);
+  --chart-4: hsl(238 10% 92%);
+  --chart-5: hsl(238 33% 41%);
+  --radius: 0.5rem;
+
+  /* sidebar */
+  --sidebar: hsl(238 39% 100%);
+  --sidebar-foreground: hsl(238 55% 1%);
+  --sidebar-primary: hsl(238 30% 41%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(238 10% 89%);
+  --sidebar-accent-foreground: hsl(238 10% 29%);
+  --sidebar-border: hsl(238 10% 92%);
+  --sidebar-ring: hsl(238 30% 41%);
+}
+
+.dark {
+  --background: hsl(238 35% 1%);
+  --foreground: hsl(238 16% 100%);
+  --muted: hsl(238 15% 15%);
+  --muted-foreground: hsl(238 6% 65%);
+  --popover: hsl(238 35% 1%);
+  --popover-foreground: hsl(238 16% 100%);
+  --card: hsl(238 35% 2%);
+  --card-foreground: hsl(0 0% 100%);
+  --border: hsl(238 10% 11%);
+  --input: hsl(238 10% 11%);
+  --primary: hsl(238 30% 41%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(238 15% 15%);
+  --secondary-foreground: hsl(238 15% 75%);
+  --accent: hsl(238 15% 15%);
+  --accent-foreground: hsl(238 15% 75%);
+  --destructive: hsl(9 92% 54%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --ring: hsl(238 30% 41%);
+  --chart-1: hsl(238 30% 41%);
+  --chart-2: hsl(238 15% 15%);
+  --chart-3: hsl(238 15% 15%);
+  --chart-4: hsl(238 15% 18%);
+  --chart-5: hsl(238 33% 41%);
+
+  --sidebar: hsl(238 35% 1%);
+  --sidebar-foreground: hsl(238 16% 100%);
+  --sidebar-primary: hsl(238 30% 41%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(238 15% 15%);
+  --sidebar-accent-foreground: hsl(238 15% 75%);
+  --sidebar-border: hsl(238 10% 11%);
+  --sidebar-ring: hsl(238 30% 41%);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Add subtle, automatic animations for shadcn/ui components globally
+     - Interactive elements: gentle lift on hover, slight press on active
+     - Surface/content elements: soft shadow hover
+     - Keep motion-respectful and minimal to avoid distraction
+  */
+  :where(button, [role="button"], a, [data-slot="button"], [data-slot$="-trigger"]) {
+    @apply transition-transform duration-200 ease-out motion-reduce:transition-none;
+  }
+  :where(button, [role="button"], a, [data-slot="button"], [data-slot$="-trigger"]):hover {
+    @apply -translate-y-0.5;
+  }
+  :where(button, [role="button"], a, [data-slot="button"], [data-slot$="-trigger"]):active {
+    @apply translate-y-0 scale-95;
+  }
+  :where(button, [role="button"], a, [data-slot="button"], [data-slot$="-trigger"]):focus-visible {
+    @apply ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  :where([data-slot="card"], [data-slot$="-content"], [data-slot="tooltip-content"]) {
+    @apply transition-shadow duration-200 ease-out motion-reduce:transition-none;
+  }
+  :where([data-slot="card"], [data-slot$="-content"], [data-slot="tooltip-content"]):hover {
+    @apply shadow-md;
+  }
+
+  /* Open/close micro-animations for common shadcn primitives (popover, dropdown, dialog, tooltip) */
+  :where([data-state="open"][data-side], [role="dialog"][data-state="open"], [role="tooltip"][data-state="open"]) {
+    animation: v0-scale-in-95 150ms ease-out;
+  }
+  :where(
+      [data-state="closed"][data-side],
+      [role="dialog"][data-state="closed"],
+      [role="tooltip"][data-state="closed"]
+    ) {
+    animation: v0-scale-out-95 120ms ease-in forwards;
+  }
+
+  /* Links: minimal underline grow on hover (simple, not flashy) */
+  a:not([data-no-underline]) {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size 200ms ease-out;
+  }
+  a:not([data-no-underline]):hover {
+    background-size: 100% 1px;
+  }
+
+  /* Respect users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    :where(button, [role="button"], a, [data-slot="button"], [data-slot$="-trigger"]),
+    :where([data-slot="card"], [data-slot$="-content"], [data-slot="tooltip-content"]),
+    :where([data-state], [role="dialog"], [role="tooltip"]) {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+
+  /* Keyframes for scale+fade used by popovers/menus/dialogs */
+  @keyframes v0-scale-in-95 {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes v0-scale-out-95 {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
+  @keyframes v0-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes v0-fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
