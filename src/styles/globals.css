@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -127,44 +127,28 @@
     @apply bg-background text-foreground;
   }
 
-  /* Add subtle, automatic animations for shadcn/ui components globally
-     - Interactive elements: gentle lift on hover, slight press on active
-     - Surface/content elements: soft shadow hover
-     - Keep motion-respectful and minimal to avoid distraction
+  /* 
+     REMOVED: Automatic animations for shadcn/ui components (hover lift, active scale, shadow hover) 
+     as per user request: "untuk hover jangan ada animasi shadow dan hilangkan button saat dihover ada animasi bergerak"
   */
-  :where(button, [role="button"], a, [data-slot="button"], [data-slot$="-trigger"]) {
-    @apply transition-transform duration-200 ease-out motion-reduce:transition-none;
-  }
-  :where(button, [role="button"], a, [data-slot="button"], [data-slot$="-trigger"]):hover {
-    @apply -translate-y-0.5;
-  }
-  :where(button, [role="button"], a, [data-slot="button"], [data-slot$="-trigger"]):active {
-    @apply translate-y-0 scale-95;
-  }
-  :where(button, [role="button"], a, [data-slot="button"], [data-slot$="-trigger"]):focus-visible {
-    @apply ring-2 ring-ring ring-offset-2 ring-offset-background;
-  }
-
-  :where([data-slot="card"], [data-slot$="-content"], [data-slot="tooltip-content"]) {
-    @apply transition-shadow duration-200 ease-out motion-reduce:transition-none;
-  }
-  :where([data-slot="card"], [data-slot$="-content"], [data-slot="tooltip-content"]):hover {
-    @apply shadow-md;
-  }
 
   /* Open/close micro-animations for common shadcn primitives (popover, dropdown, dialog, tooltip) */
-  :where([data-state="open"][data-side], [role="dialog"][data-state="open"], [role="tooltip"][data-state="open"]) {
+  :where(
+    [data-state='open'][data-side],
+    [role='dialog'][data-state='open'],
+    [role='tooltip'][data-state='open']
+  ) {
     animation: v0-scale-in-95 150ms ease-out;
   }
   :where(
-      [data-state="closed"][data-side],
-      [role="dialog"][data-state="closed"],
-      [role="tooltip"][data-state="closed"]
-    ) {
+    [data-state='closed'][data-side],
+    [role='dialog'][data-state='closed'],
+    [role='tooltip'][data-state='closed']
+  ) {
     animation: v0-scale-out-95 120ms ease-in forwards;
   }
 
-  /* Links: minimal underline grow on hover (simple, not flashy) */
+  /* Links: minimal underline grow on hover (simple, not flashy) - KEEPING this as it is not a shadow/move animation, but will remove if user complains */
   a:not([data-no-underline]) {
     background-image: linear-gradient(currentColor, currentColor);
     background-position: 0 100%;
@@ -178,9 +162,7 @@
 
   /* Respect users who prefer reduced motion */
   @media (prefers-reduced-motion: reduce) {
-    :where(button, [role="button"], a, [data-slot="button"], [data-slot$="-trigger"]),
-    :where([data-slot="card"], [data-slot$="-content"], [data-slot="tooltip-content"]),
-    :where([data-state], [role="dialog"], [role="tooltip"]) {
+    :where([data-state], [role='dialog'], [role='tooltip']) {
       transition: none !important;
       animation: none !important;
     }

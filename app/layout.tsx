@@ -1,16 +1,16 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { Suspense } from "react"
+import type React from 'react'
+import type { Metadata } from 'next'
+import { GeistSans } from 'geist/font/sans'
+import { GeistMono } from 'geist/font/mono'
+import { Analytics } from '@vercel/analytics/next'
+import '@/styles/globals.css'
+import { ThemeProvider } from '@/theme/theme-provider'
+import { Suspense } from 'react'
 
 export const metadata: Metadata = {
-  title: "Web Component Shadcn Base",
-  description: "Created with @mochrks",
-  generator: "@mochrks",
+  title: 'Web Component Shadcn Base',
+  description: 'Created with @mochrks',
+  generator: '@mochrks',
 }
 
 function Loading() {
@@ -24,6 +24,8 @@ function Loading() {
   )
 }
 
+import { ReduxProvider } from '@/redux/ReduxProvider'
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,9 +35,16 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <Suspense fallback={<Loading />}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            {children}
-          </ThemeProvider>
+          <ReduxProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+          </ReduxProvider>
           <Analytics />
         </Suspense>
       </body>
