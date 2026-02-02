@@ -6,6 +6,7 @@ import { Analytics } from '@vercel/analytics/next'
 import '@/styles/globals.css'
 import { ThemeProvider } from '@/theme/theme-provider'
 import { Suspense } from 'react'
+import SmoothScroll from '@/components/SmoothScroll'
 
 export const metadata: Metadata = {
   title: 'Web Component Shadcn Base',
@@ -42,7 +43,7 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
-              {children}
+              <SmoothScroll>{children}</SmoothScroll>
             </ThemeProvider>
           </ReduxProvider>
           <Analytics />
