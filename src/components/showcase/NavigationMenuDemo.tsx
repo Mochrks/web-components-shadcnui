@@ -54,13 +54,23 @@ export function NavigationMenuDemo() {
                       <li className="row-span-3">
                         <NavigationMenuLink asChild>
                           <a
-                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                            className="relative flex h-full w-full select-none flex-col justify-end overflow-hidden rounded-md p-6 no-underline outline-none focus:shadow-md group"
                             href="#"
                           >
-                            <div className="mb-2 mt-4 text-lg font-medium">ShadcnUI</div>
-                            <p className="text-sm leading-tight text-muted-foreground">
-                              Beautifully designed components for your apps.
-                            </p>
+                            <img
+                              src="/featured-menu.png"
+                              alt="Featured"
+                              className="absolute inset-0 w-full h-full object-cover transition-transform group-hover:scale-110 duration-500"
+                            />
+                            <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors" />
+                            <div className="relative z-10">
+                              <div className="mb-1 text-lg font-bold text-white leading-tight">
+                                ShadcnUI Premium
+                              </div>
+                              <p className="text-sm leading-tight text-white/80">
+                                Crafted components for modern websites.
+                              </p>
+                            </div>
                           </a>
                         </NavigationMenuLink>
                       </li>

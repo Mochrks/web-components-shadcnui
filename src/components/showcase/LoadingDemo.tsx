@@ -24,7 +24,7 @@ export function NoDataDemo() {
           <CardTitle>No Data State</CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col items-center justify-center h-48 gap-3 text-muted-foreground">
-          <img src="/no-data.png" alt="No data" className="h-24 w-24 object-contain opacity-80" />
+          <img src="/nodata.png" alt="No data" className="h-24 w-24 object-contain opacity-80" />
           <p>No items found</p>
         </CardContent>
       </Card>

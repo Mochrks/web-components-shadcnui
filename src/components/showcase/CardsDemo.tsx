@@ -65,6 +65,64 @@ export function CardsDemo() {
             </Card>
           </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Card className="overflow-hidden">
+              <div className="aspect-video w-full overflow-hidden">
+                <img
+                  src="/blog-post.png"
+                  alt="Blog Post"
+                  className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                />
+              </div>
+              <CardHeader>
+                <div className="flex justify-between items-center mb-2">
+                  <Badge variant="outline">Technology</Badge>
+                  <span className="text-xs text-muted-foreground">5 min read</span>
+                </div>
+                <CardTitle>The Future of Modern Web Development</CardTitle>
+                <CardDescription>
+                  Exploring how AI and edge computing are reshaping the landscape of building web
+                  applications in 2026.
+                </CardDescription>
+              </CardHeader>
+              <CardFooter className="border-t pt-4">
+                <Button variant="ghost" className="p-0 h-auto font-semibold">
+                  Read more →
+                </Button>
+              </CardFooter>
+            </Card>
+
+            <Card className="overflow-hidden">
+              <div className="aspect-video w-full overflow-hidden bg-slate-50 flex items-center justify-center p-4">
+                <img
+                  src="/product-watch.png"
+                  alt="Product Watch"
+                  className="max-h-full object-contain mix-blend-multiply drop-shadow-xl"
+                />
+              </div>
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <CardTitle>Nexus Smartwatch Pro</CardTitle>
+                    <CardDescription>Next-gen health tracking and connectivity.</CardDescription>
+                  </div>
+                  <div className="text-xl font-bold text-primary">$349.00</div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="flex gap-2">
+                  <Badge variant="secondary">Health</Badge>
+                  <Badge variant="secondary">GPS</Badge>
+                  <Badge variant="secondary">Waterproof</Badge>
+                </div>
+              </CardContent>
+              <CardFooter className="gap-2 border-t pt-4">
+                <Button className="flex-1">Add to Cart</Button>
+                <Button variant="outline">Wishlist</Button>
+              </CardFooter>
+            </Card>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Card>
               <CardHeader>

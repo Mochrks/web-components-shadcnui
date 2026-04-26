@@ -52,6 +52,20 @@ export function SheetDrawerDemo() {
                       Make changes to your profile here. Click save when done.
                     </SheetDescription>
                   </SheetHeader>
+                  <div className="flex flex-col items-center justify-center py-6">
+                    <div className="relative group">
+                      <div className="h-24 w-24 rounded-full overflow-hidden border-4 border-muted">
+                        <img
+                          src="/avatar-john.png"
+                          alt="Profile"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="absolute bottom-0 right-0 rounded-full h-8 w-8 border-2 border-background bg-secondary flex items-center justify-center">
+                        <User className="h-4 w-4" />
+                      </div>
+                    </div>
+                  </div>
                   <div className="grid gap-4 py-4 px-4">
                     <div className="grid grid-cols-4 items-center gap-4">
                       <Label htmlFor="name" className="text-right">
