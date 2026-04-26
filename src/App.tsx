@@ -20,7 +20,18 @@ import { LoadingDemo, NoDataDemo } from '@/components/showcase/LoadingDemo'
 import { SkeletonDemo } from '@/components/showcase/SkeletonDemo'
 import { FormDemo } from '@/components/showcase/FormDemo'
 import { DropdownsDemo } from '@/components/showcase/DropdownsDemo'
+import { ToastDemo } from '@/components/showcase/ToastDemo'
+import { CardsDemo } from '@/components/showcase/CardsDemo'
+import { CarouselDemo } from '@/components/showcase/CarouselDemo'
+import { ChartDemo } from '@/components/showcase/ChartDemo'
+import { PaginationDemo } from '@/components/showcase/PaginationDemo'
+import { NavigationMenuDemo } from '@/components/showcase/NavigationMenuDemo'
+import { SheetDrawerDemo } from '@/components/showcase/SheetDrawerDemo'
+import { TooltipHoverCardDemo } from '@/components/showcase/TooltipHoverCardDemo'
+import { OTPInputDemo } from '@/components/showcase/OTPInputDemo'
+import { ToggleSwitchDemo } from '@/components/showcase/ToggleSwitchDemo'
 import { ThemeProvider } from '@/theme/theme-provider'
+import { Toaster } from '@/components/ui/sonner'
 
 export default function ShowcasePage() {
   return (
@@ -65,7 +76,22 @@ export default function ShowcasePage() {
         </div>
 
         <DropdownsDemo />
+
+        <ToastDemo />
+        <CardsDemo />
+        <NavigationMenuDemo />
+        <CarouselDemo />
+        <ChartDemo />
+        <PaginationDemo />
+        <SheetDrawerDemo />
+        <TooltipHoverCardDemo />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <OTPInputDemo />
+          <ToggleSwitchDemo />
+        </div>
       </div>
+      <Toaster richColors />
     </ThemeProvider>
   )
 }
